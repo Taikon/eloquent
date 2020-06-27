@@ -1,9 +1,16 @@
-name = ARGV.join('')
-order = case name
-        when 'user_1' then 'order_1'
-        when 'user_2' then 'order_2'
-        when 'user_3' then 'order_3'
-        else nil
-        end
-puts order
+# Use regexp with case statements for more flexible evaluation
+# Don't use ||= to initialize booleans. @cart ||= Cart.find(session[:cart_id]) is fine bc not a bool
 
+# Accepts argument vector (CLI) and evaluates it with regexp case statements
+# $ ruby ch2.rb War and Peas #=> 'Maybe Tolstoy?'
+query = ARGV.join(' ')
+puts query
+search = case query
+        when /War And .*/ then 'Maybe Tolstoy?'
+        when /Romeo and .*/ then 'Maybe Shakespeare?'
+        else 'No idea'
+        end
+puts search
+
+query ||= ' '
+puts query
