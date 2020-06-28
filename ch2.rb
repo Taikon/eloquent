@@ -1,5 +1,5 @@
-# Use regexp with case statements for more flexible evaluation
-# Don't use ||= to initialize booleans. @cart ||= Cart.find(session[:cart_id]) is fine bc not a bool
+# 1. Use regexp with case statements for more flexible evaluation
+# 2. Don't use ||= to initialize booleans. @cart ||= Cart.find(session[:cart_id]) is fine bc not a bool
 
 # Accepts argument vector (CLI) and evaluates it with regexp case statements
 # $ ruby ch2.rb War and Peas #=> 'Maybe Tolstoy?'
